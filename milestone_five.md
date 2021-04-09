@@ -20,7 +20,7 @@ group:
         - **Amina Mahmood**
     - _Code Reviewer_
         - **Aaron Joel Parker**
-    - _Software Architects_
+    - _Software Architect_
         - **Aaron Joel Parker**
     - _Configuration Manager_
         - **Amina Mahmood**
