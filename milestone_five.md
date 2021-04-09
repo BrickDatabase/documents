@@ -15,7 +15,7 @@ group:
 # Development Book
 
 ## Team Members and Roles
-- **ERveryone**
+- **Brick Database Team**
     - _Documentarian_
 - **Amina Mahmood**
     - _Code Reviewer_
