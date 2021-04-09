@@ -2,7 +2,7 @@
 milestone:
     iteration: 05
     title: "Refactoring"
-    date: "March 26, 2021"
+    date: "April 9, 2021"
 group:
     number: 3
     name: "Brick Database"
@@ -17,14 +17,17 @@ group:
 ## Team Members and Roles
 - **Brick Database Team**
     - _Documentarian_
-- **Amina Mahmood**
+        - **Amina Mahmood**
     - _Code Reviewer_
-- **Aaron Wade Parker**
-    - _Software Architect_
-- **Aaron Wade Parker**
+        - **Aaron Joel Parker**
+    - _Software Architects_
+        - **Aaron Joel Parker**
     - _Configuration Manager_
-- **Edward Riley**
+        - **Amina Mahmood**
+        - **Edward Riley**
     - _Team Coordinator_
+        - **Edward Riley**
+    
 
 
 ## Background
@@ -384,13 +387,12 @@ except:
 
 There are two exception handling in the python scripts. The python scripts altogether is designed not to fail as the user will not be touching the python script at all. There is an exception handling for database connection test check. If the database connection does not work, the exit signal will be triggered with another exit signal on the base file to help follow along the "thread" where error went wrong. We do have an exception handling that checks to see if the file or python packages exists or not when we attempt to import the files. If the files or python packages do not exist, the message is logged in terminal visible only to the developers. We have determined that it is not necessary for exception handling in python scripts to store the error messages to the error.log for the meantime. 
 
-![alt text](https://github.com/europa-report/documents/blob/main/expansion%20of%20the%20layered%20architecture%20description.png?raw=true)
 
 ## Performance & Refactoring
 
 ### Performance Layers
 
-We did refactoring our codes for performance reasons by simplifying them to makes functions less verbose. 
+We did refactoring our codes for performance reasons by simplifying them to makes functions less verbose. This allows REST API to be optimized and boost performance in callbacks to ensure that there is no long polling.
 
 #### Service Layers
 - API calls have been changed to accomodate the Object-Orient Programming standards where the return API call information is easier to access.
