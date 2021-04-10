@@ -51,14 +51,14 @@ The project serves to provide a statistical analysis to show the increase or dec
 
 ## Technologies Used
 - Back-end
-     - **MySQL/MariaDB**
+     - **PostgreSQL**
      - **NodeJS**
-     - **ExpressJS**
+     - **Fastify**
 - Front-end 
      -  **React.js** 
      -  **BootStrap**
 - GitHub
-    - GitHub URL: https://github.com/europa-report 
+    - GitHub URL: https://github.com/BrickDatabase
 
 ## Design Patterns
 - **Model, View, Controller (MVC)**
@@ -100,7 +100,7 @@ The project serves to provide a statistical analysis to show the increase or dec
 Our team will keep the user interface separated from the back-end by using the tactic Separate User Interface, which will allow changes to be made easier. 
 
 The layered architecture diagram is provided below:
-![alt text](https://github.com/europa-report/documents/blob/main/layered.png)
+![alt text](https://raw.githubusercontent.com/BrickDatabase/documents/main/BrickDatabaseDiagram.png?token=AGWYD6JY3GFCJ42XLI4B22TAODVDM)
 
 
 ## Timeline
