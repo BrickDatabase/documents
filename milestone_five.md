@@ -82,7 +82,7 @@ The project serves to provide a statistical analysis to show the increase or dec
   - This layer will include Python and Crontab Job tools.
   - The responsibility of this layer is to maintain data consistency. For each new day, the crontab job will be executed which will make an API request from the source containing the data and breaking them down to be organized. The organized data will be selectively passed to the data layer.
 
-#### Data Layer: **MySQL/MariaDB**
+#### Data Layer: **PostgreSQL**
   - This layer will include the MySQL/MariaDB database tool and the Reddit API functionality. 
   - Once the data is passed from the service layer, the data will add a new record along with newly made unique identifier to be the primary key and a date of when the information was collected and data to be followed afterwards.  
   - The responsibilities of this layer will be store the collected data from the service layer and pass collected data to the business layer. 
@@ -186,7 +186,7 @@ Our overall goal is to make a new facade for Reddit with archival features and a
 * ReactJS
 * NodeJS
 * ExpressJS
-* MySQL/MariaDB
+* PostgreSQL
 * Python
 
 ## Error and Exception Handling
@@ -455,7 +455,7 @@ We did refactoring our codes for performance reasons by simplifying them to make
 ### Refactoring Layers
 
 #### Application Layer
-Only have to refactor the db.config.js file from changing MySQL to PostgreSQL. The queries I refactored for performance reasons are what allow minimal changes to the backend.
+Only have to refactor the db.config.js file from changing MySQL to PostgreSQL. The queries I refactored for performance reasons are what allow minimal changes to the backend. Also installed package pg - a postgresql driver for Nodejs.
 
 ##### db.config.js
 
