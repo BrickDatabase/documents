@@ -449,9 +449,6 @@ We did refactoring our codes for performance reasons by simplifying them to make
             }
         }
 ```
-
-#### Service Layer
-
 ### Refactoring Layers
 
 #### Application Layer
