@@ -1,8 +1,8 @@
 ```yaml
 milestone:
-    iteration: 05
-    title: "Refactoring"
-    date: "April 9, 2021"
+    iteration: 06
+    title: "Testing"
+    date: "April 21, 2021"
 group:
     number: 3
     name: "Brick Database"
@@ -610,3 +610,182 @@ def insertRowInformation(id, date, subscribers, activeSubscribers, submission, c
     mycursor = databaseVar.cursor()
     mycursor.execute("INSERT INTO information (subreddit_id, date, subscribers, active_subscribers, submission, comments) VALUES ('" + str(id) + "', '"+ str(date) + "', '" + str(subscribers) + "', '" + str(activeSubscribers) + "', '" + str(submission) + "', '" + str(comment) + "');")
 ```
+
+
+## Testing 
+
+### Testing Unit Framework
+
+### Python - Service Layer
+
+#### PyTest
+
+
+
+### Nodejs - Application Layer
+
+#### Mocha
+
+Mocha is the most popular testing framework for Nodejs installed with npm or even used as CDN in the browser.
+
+- To use Mocha, you have to add a test in the script. Recommend add asterisk * as a wild character to run all javascript files that exist within the test directory.
+
+```json
+"scripts":{
+    "test": "mocha src/test/*.js --timeout 10000"
+}
+```
+
+- Run the test command from npm test.
+
+```bash
+npm test
+```
+
+However, we are testing the Nodejs' REST API to see if it is functioning as we intend it. Most developers would suggest POSTMAN by default, but it is inadequate in providing information when something goes wrong. We will need to use **Chai** packages that allow us to gather more information.
+
+Here the example of how **Chai** api works. By looking in the test js files.
+
+- #### lookup.test.js & info.test.js
+
+```js
+//lookup.test.js
+
+//Retrieving all lookup data.
+describe('/GET lookups',()=>{
+    it('it should GET all the lookups', (done)=>{
+        /*
+        making request to express's app from src/index.js
+        */
+        chai.request(server)
+        .get('/lookups')
+        .end((err,res)=>{
+
+            if(err){
+                console.log(err)
+            }
+            //stating that it should have status of success
+            res.should.have.status(200)
+            //state what kind of attribute it should be
+            res.body.should.be.a('object')
+            //stating what each row properties should have
+            res.body.result.rows[0].should.have.property('id')
+            res.body.result.rows[0].should.have.property('name')
+            res.body.result.rows[0].should.have.property('abbreviation')
+        done()
+        })
+    })
+})
+
+//info.test.js
+
+//Retrieving all information data.
+describe('/GET infos',()=>{
+    it('it should GET all the infos', (done)=>{
+        /*
+        making request to express's app from src/index.js
+        */
+        chai.request(server)
+        .get('/infos')
+        .end((err,res)=>{
+            if(err){
+                console.log(err)
+            }
+            //stating that it should have status of success
+            res.should.have.status(200)
+            //state what kind of attribute it should be
+            res.body.should.be.a('object')
+            //stating what each row properties should have
+            res.body.result.rows[0].should.have.property('active_subscribers')
+            res.body.result.rows[0].should.have.property('comments')
+            res.body.result.rows[0].should.have.property('date')
+            res.body.result.rows[0].should.have.property('submission')
+            res.body.result.rows[0].should.have.property('subreddit_id')
+            res.body.result.rows[0].should.have.property('subscribers')
+        done()
+        })
+    })
+})
+```
+- Inside the function, I stated what properties each row should have. The goal is to ensure that the codes are behaving as we intended.
+```js
+
+//lookup.test.js
+
+//This is for inserting lookup data
+
+describe('/POST lookup',()=>{
+    it('it should POST a lookup ',(done)=>{
+        /*
+        generate a mock data to test the function
+        */
+        let lookup = {
+            name: "Testing",
+            abbreviation: "tst"
+        }
+        /*
+        making request to express's app from src/index.js
+        */
+        chai.request(server)
+        .post('/lookup')
+        .send(lookup)
+        .end((err,res)=>{
+            //stating that it should have status of success
+            res.should.have.status(200)
+            //state what kind of attribute it should be
+            res.body.should.be.a('object')
+            //state that the property should have result
+            res.body.should.have.property('result')
+        done()
+        })
+    })
+})
+
+//info.test.js
+
+//This is for inserting info data
+
+describe('/POST info', ()=>{
+    it('it should POST info',(done)=>{
+
+        /*
+        generate a mock data to test the function
+        */
+        let info = {
+            active_subscribers:5,
+            comments:3,
+            date:'2020-12-07 10:30:39',
+            submission:67,
+            subreddit_id:2,
+            subscribers:9
+        }
+        /*
+        making request to express's app from src/index.js
+        */
+        chai.request(server)
+        .post('/info')
+        .send(info)
+        .end((err,res)=>{
+            if(err){
+                console.log(err)
+            }
+            //stating that it should have status of success
+            res.should.have.status(200)
+            //state what kind of attribute it should be
+            res.body.should.be.a('object')
+            //state that the property should have result
+            res.body.should.have.property('result')
+        done()
+        })
+    })
+})
+```
+- Inside the function, I stated the properties it should have as result values to state the operation is either successful or fail.
+
+Also, it important to note that info.test.js are the exactly the same as lookup.test.js.
+
+
+
+### React - Presentation Layer
+
+#### Jest
