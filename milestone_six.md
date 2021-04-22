@@ -620,6 +620,20 @@ def insertRowInformation(id, date, subscribers, activeSubscribers, submission, c
 
 #### PyTest
 
+PyTest is a framework that makes it easy to write small tests, yet scales to support complex functional testing for applications and libraries. It is highly recommended by critics to be used for testing and documentation purposes. We have created a sample python script based on the current script that allows us to debug and test the application with the provided values.
+
+- To see PyTest, head to the Service Layer directory and type in `pytest -v test_get_call.py` into the terminal. This will run the python in a testing environment. It will take some time for the test to complete. If the test is successful, it is expected that you will receive a similar output to `100% / 2 passed in 93.93s (0:01:33)`. Otherwise, the output will indicate that the test has failed due to an error or raised exception. The dcode below is the only code block that is added to the service layer that needs to be written to test scheduled_job(). A reminder that the scheduled_job() method grabs the required information from subreddit for our data-driven application.
+
+```
+def testing_op():
+    try:
+        scheduled_job()
+    except:
+        print('Dumping data gone wrong.')
+        raise SystemExit(0)
+def test_mytest():
+        testing_op()
+```
 
 
 ### Nodejs - Application Layer
