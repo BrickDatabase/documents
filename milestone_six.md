@@ -14,6 +14,23 @@ group:
 
 # Development Book
 
+### Section
+- [Background](#background)
+- [Project Description](#project-description)
+- [Project Requirement](#project-requirement)
+- [Business Rules](#business-rules)
+- [Technologies Used](#technologies-used)
+- [Design Patterns](#design-patterns)
+- [Layering](#layering)
+- [Timeline](#timeline)
+- [Glossary](#glossary)
+- [Current System](#current-system)
+- [Goals](#goals)
+- [Stakeholders](#stakeholders)
+- [Error & Exception Handling](#error-and-exception-handling)
+- [Performance & Refactoring](#performance-and-refactoring)
+- [Testing](#testing)
+
 ## Team Members and Roles
 - **Brick Database Team**
     - _Documentarian_
@@ -388,7 +405,7 @@ except:
 There are two exception handling in the python scripts. The python scripts altogether is designed not to fail as the user will not be touching the python script at all. There is an exception handling for database connection test check. If the database connection does not work, the exit signal will be triggered with another exit signal on the base file to help follow along the "thread" where error went wrong. We do have an exception handling that checks to see if the file or python packages exists or not when we attempt to import the files. If the files or python packages do not exist, the message is logged in terminal visible only to the developers. We have determined that it is not necessary for exception handling in python scripts to store the error messages to the error.log for the meantime. 
 
 
-## Performance & Refactoring
+## Performance and Refactoring
 
 ### Performance Layers
 
@@ -624,7 +641,7 @@ PyTest is a framework that makes it easy to write small tests, yet scales to sup
 
 - To see PyTest, head to the Service Layer directory and type in `pytest -v test_get_call.py` into the terminal. This will run the python in a testing environment. It will take some time for the test to complete. If the test is successful, it is expected that you will receive a similar output to `100% / 2 passed in 93.93s (0:01:33)`. Otherwise, the output will indicate that the test has failed due to an error or raised exception. The dcode below is the only code block that is added to the service layer that needs to be written to test scheduled_job(). A reminder that the scheduled_job() method grabs the required information from subreddit for our data-driven application.
 
-```
+```py
 def testing_op():
     try:
         scheduled_job()
@@ -638,7 +655,7 @@ def test_mytest():
 
 ### Nodejs - Application Layer
 
-#### Mocha
+#### Mocha & Chai
 
 Mocha is the most popular testing framework for Nodejs installed with npm or even used as CDN in the browser.
 
@@ -802,4 +819,50 @@ Also, it important to note that info.test.js are the exactly the same as lookup.
 
 ### React - Presentation Layer
 
-#### Jest
+#### React-Scripts built-in test with Jest
+
+The React we are using is from Create-React-App, which comes with multiple packages that make the development process more rapid.
+
+The best part about React is that we only need to manually test the components we created. The Jest API is part of the testing process that will automatically test all functions or units within each component.
+
+- **App.test.js**
+    - This is the file where all test functions evaluate each component.
+
+    ```js
+    test('sidebar',()=>{
+        render(<Sidebar/>)
+    })
+
+    test('header',()=>{
+        render(<Header/>)
+    })
+
+    /*The reason for using HTMLCanvasElement is to get the context of charts, 
+    otherwise it will result in error & failed status*/
+    test('dashboard',()=>{
+        HTMLCanvasElement.prototype.getContext = () => { 
+            render(<Dashboard/>)
+        }
+    })
+    ``` 
+    - This test only need to run one command and one argument
+    ```bash
+    npm test
+    ```
+    - Then if all functions within each component doesn't result in any errors. Then the result will look like this.
+    ```bash
+     PASS  src/App.test.js
+  ✓ sidebar (81 ms)
+  ✓ header (8 ms)
+  ✓ dashboard
+
+    Test Suites: 1 passed, 1 total
+    Tests:       3 passed, 3 total
+    Snapshots:   0 total
+    Time:        6.859 s
+    Ran all test suites related to changed files.
+
+    Watch Usage: Press w to show more.
+    ```
+    
+
