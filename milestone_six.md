@@ -846,10 +846,12 @@ The best part about React is that we only need to manually test the components w
     })
     ``` 
     - This test only need to run one command and one argument
+    
     ```bash
     npm test
     ```
     - Then if all functions within each component doesn't result in any errors. Then the result will look like this.
+
     ```bash
      PASS  src/App.test.js
   ✓ sidebar (81 ms)
@@ -864,5 +866,5 @@ The best part about React is that we only need to manually test the components w
 
     Watch Usage: Press w to show more.
     ```
-    
+
 
