@@ -875,17 +875,24 @@ The best part about React is that we only need to manually test the components w
 - Install despendencies NPM `npm install`
 
 ### Heroku Package
+- Install your platform `brew install heroku/brew/heroku`
 - Download and install the Heroku CLI and create an account if you haven't it. 
 - Login `heroku login`
 - Create `heroku create`
-- ????? 
+- Check the version of Node `node --version`
+- Check the version of Npm `npm --version`
+- Check the version of Git `git --version`
+- Clone the repository with git clone >>>>>>>>>>>>
+- cd >>>>>>>>
 
 
 ### Pip3 Package
-- Download pip3 on your computer `pip3 install <module>`.
-- Check the version number `python --version`
-- Run python 
+- Install packages from requirements.txt
+- pip3 install -r requirements.txt
+- Run python3 
 
 ### Npm Package
+- Install package individually `npm install <package_name>`
+- To install all packages from packages.json `npm i`
 - Run the server and the client development server with npm start
 - To develop server will start at http://localhost:3000.
