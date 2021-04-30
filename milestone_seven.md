@@ -869,9 +869,15 @@ The best part about React is that we only need to manually test the components w
     ```
 ## Deployment & Packaging
 
+### Deployment
+- Install Node.js 
+- Clone the repository with git clone >>>>>>>>
+- Install despendencies NPM `npm install`
+
 ### Heroku Package
 
 ### Pip3 Package
 
 ### Npm Package
-
+- Run the server and the client development server with npm start
+- To develop server will start at http://localhost:3000.
