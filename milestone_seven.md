@@ -871,9 +871,7 @@ The best part about React is that we only need to manually test the components w
 
 ### Heroku Package
 
-### Postgre Package
-
-### NodeJS Package
+### Pip3 Package
 
 ### Npm Package
 
