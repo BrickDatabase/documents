@@ -867,7 +867,7 @@ The best part about React is that we only need to manually test the components w
 
     Watch Usage: Press w to show more.
     ```
-## Deployment & Packaging
+## Deployment and Packaging
 
 ### Deployment
 - Install Node.js 
@@ -875,20 +875,25 @@ The best part about React is that we only need to manually test the components w
 - Install despendencies NPM `npm install`
 
 ### Heroku Package
-- Install your platform `brew install heroku/brew/heroku`
+
+#### Installation
+-First you need to `git clone `
+- **MacOS**: Install heroku CLI using [homebrew](https://brew.sh/) `brew install heroku/brew/heroku`
+- **Windows 10**: [Window 10's Installer](https://cli-assets.heroku.com/heroku-x64.exe)
+- **Linux**: [List of Linux Supported](#Linux-Support) If you haven't install snap package yet then do this first `sudo apt install snapd` and then install heroku `sudo snap install heroku --classic`
 - Download and install the Heroku CLI and create an account if you haven't it. 
 - Login `heroku login`
 - Create `heroku create`
 - Check the version of Node `node --version`
 - Check the version of Npm `npm --version`
 - Check the version of Git `git --version`
-- Clone the repository with git clone >>>>>>>>>>>>
-- cd >>>>>>>>
+- Clone the repository with git clone 
+- 
 
 
 ### Pip3 Package
-- Install packages from requirements.txt
-- pip3 install -r requirements.txt
+- Install package individually `pip3 install <MODULE_NAME>`
+- Install all packages from requirements.txt `pip3 install -r requirements.txt`
 - Run python3 
 
 ### Npm Package
@@ -896,3 +901,12 @@ The best part about React is that we only need to manually test the components w
 - To install all packages from packages.json `npm i`
 - Run the server and the client development server with npm start
 - To develop server will start at http://localhost:3000.
+
+
+## Linux Support
+Any Linux OS that are using **snap** or can be install with **snap** natively without needing to do workaround.
+- Debian
+- Ubuntu
+- ElementaryOS
+- POP!_OS
+- ArchLinux
