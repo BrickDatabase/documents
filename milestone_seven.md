@@ -870,37 +870,57 @@ The best part about React is that we only need to manually test the components w
 ## Deployment and Packaging
 
 ### Deployment
-- Install Node.js 
-- Clone the repository with git clone >>>>>>>>
-- Install despendencies NPM `npm install`
-
-### Heroku Package
 
 #### Installation
--First you need to `git clone `
+##### Installing NodeJS
+- **MacOS**: using [homebrew](https://brew.sh/) `brew install node`
+- **Windows 10**: Install NodeJS from [NodeJS's website](https://nodejs.org/en/download/)
+- **Linux**: Install NodeJS `sudo apt install node` & `sudo apt install npm`
+##### Installing Python3
+- **MacOS**: using [homebrew](https://brew.sh/) `brew install python`, it will install the latest which is Python3.
+- **Windows 10**: download from [Python.org](https://www.python.org/downloads/)
+- **Linux**: Install Python3 with advanced package tool `sudo apt install python3.8`
+##### Cloning the Git Repository
+- To clone a git address, go to the desired directory and type`git clone https://github.com/BrickDatabase/Brick-Subreddit.git`
+- Once you cloned the git address, you need to navigate to cloned's directory and to update submodules to add each repos to the directory `git submodule update --init`
+
+### Heroku's CLI and Deployment
+#### Installation
 - **MacOS**: Install heroku CLI using [homebrew](https://brew.sh/) `brew install heroku/brew/heroku`
 - **Windows 10**: [Window 10's Installer](https://cli-assets.heroku.com/heroku-x64.exe)
 - **Linux**: [List of Linux Supported](#Linux-Support) If you haven't install snap package yet then do this first `sudo apt install snapd` and then install heroku `sudo snap install heroku --classic`
-- Download and install the Heroku CLI and create an account if you haven't it. 
-- Login `heroku login`
-- Create `heroku create`
-- Check the version of Node `node --version`
-- Check the version of Npm `npm --version`
-- Check the version of Git `git --version`
-- Clone the repository with git clone 
-- 
-
+- Navigate to service-layer and login using heroku account `heroku login`
+- Add the sand-brickheroes's url `git remote add heroku https://git.heroku.com/sand-brickheroes.git`
+- Navigate to application-layer and login again using heroku account `heroku login`
+- Add the brickheroes's url `git remote add heroku https://git.heroku.com/brick-subreddit.git`
+#### Commands
+- To deploy the repo to heroku `git push heroku main`
+- To turn on the website `heroku ps:scale web=1`
+- To turn off the website `heroku ps:scale web=0`
+- To open up the website `heroku open`
+- Provision the database `heroku addons:create heroku-postgresql:hobby-dev`
+- To check how much dynos is available `heroku ps`
 
 ### Pip3 Package
+
+#### Installation
 - Install package individually `pip3 install <MODULE_NAME>`
 - Install all packages from requirements.txt `pip3 install -r requirements.txt`
-- Run python3 
+
+#### Commands
+- To run python file `Python3 filename.py`
+- To test python file `PyTest filename.py`
 
 ### Npm Package
+
+#### Installation
 - Install package individually `npm install <package_name>`
 - To install all packages from packages.json `npm i`
-- Run the server and the client development server with npm start
-- To develop server will start at http://localhost:3000.
+
+#### Commands
+- To run NodeJS file `npm start`
+- To Test NodeJS file `npm run mocha`
+
 
 
 ## Linux Support
