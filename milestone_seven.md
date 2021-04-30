@@ -875,10 +875,14 @@ The best part about React is that we only need to manually test the components w
 - Install despendencies NPM `npm install`
 
 ### Heroku Package
+- Download and install the Heroku CLI and create an account if you haven't it. 
+- Login `heroku login`
+- Create `heroku create`
+- ????? 
 
 
 ### Pip3 Package
-- To download pip3 on your computer `pip3 install <module>`.
+- Download pip3 on your computer `pip3 install <module>`.
 - Check the version number `python --version`
 - Run python 
 
