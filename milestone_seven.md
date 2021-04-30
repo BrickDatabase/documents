@@ -876,7 +876,11 @@ The best part about React is that we only need to manually test the components w
 
 ### Heroku Package
 
+
 ### Pip3 Package
+- To download pip3 on your computer `pip3 install <module>`.
+- Check the version number `python --version`
+- Run python 
 
 ### Npm Package
 - Run the server and the client development server with npm start
